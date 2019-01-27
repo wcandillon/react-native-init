@@ -6,7 +6,11 @@ const path = require('path');
 const tsconfig = fs.readFileSync(path.resolve(__dirname, '../templates/tsconfig.json'), 'utf8');
 const eslintrc = fs.readFileSync(path.resolve(__dirname, '../templates/.eslintrc'), 'utf8');
 
-const name = process.argv.slice(-1)[0]
+const name = process.argv.slice(-1)[0];
+
+if (!name || name.trim() === "") {
+  console.log("Please provide project name.");
+}
 
 if (!sh.which('expo')) {
   sh.echo('Sorry, this script requires expo');
