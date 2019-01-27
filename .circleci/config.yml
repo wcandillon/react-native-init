@@ -27,6 +27,7 @@ jobs:
           - v1-dependencies-
 
       - run: yarn install
+      - run: yarn global add expo
 
       - save_cache:
           paths:
@@ -34,7 +35,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn global add expo
       - run: yarn test
 
       - deploy:
