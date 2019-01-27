@@ -6,7 +6,7 @@
     "react-native-init": "./bin/react-native-init.js"
   },
   "scripts": {
-    "test": "./bin/react-native.init test",
+    "test": "./bin/react-native-init test",
     "semantic-release": "semantic-release"
   },
   "repository": {
