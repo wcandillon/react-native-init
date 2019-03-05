@@ -9,6 +9,9 @@
     "test": "./bin/react-native-init.js test",
     "semantic-release": "semantic-release"
   },
+  "files": [
+    "bin"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/wcandillon/react-native-init.git"
