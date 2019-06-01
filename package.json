@@ -6,9 +6,12 @@
     "react-native-init": "./bin/react-native-init.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "./bin/react-native-init.js test",
     "semantic-release": "semantic-release"
   },
+  "files": [
+    "bin"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/wcandillon/react-native-init.git"

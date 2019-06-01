@@ -5,26 +5,17 @@ const path = require('path');
 
 const tsconfig = fs.readFileSync(path.resolve(__dirname, '../templates/tsconfig.json'), 'utf8');
 const eslintrc = fs.readFileSync(path.resolve(__dirname, '../templates/.eslintrc'), 'utf8');
-
-const name = process.argv.slice(-1)[0]
-
-if (!sh.which('expo')) {
-  sh.echo('Sorry, this script requires expo');
-  sh.exit(1);
-}
-
-sh.exec(`expo init ${name} --template blank`);
-sh.cd(name);
+const gitignore = fs.readFileSync(path.resolve(__dirname, '../templates/.gitignore'), 'utf8');
 sh.exec('yarn add @types/expo eslint eslint-config-react-native-wcandillon --dev');
 sh.mv('App.js', 'App.tsx');
 sh.config.silent = true;
 sh.echo(tsconfig).to('tsconfig.json');
 sh.echo(eslintrc).to('.eslintrc');
+sh.echo(gitignore).to('.gitignore');
 const package = JSON.parse(sh.cat('package.json'));
 package.scripts.lint = "eslint App.tsx components/*";
 package.scripts.tsc = "tsc";
 sh.echo(JSON.stringify(package, null, 2)).to('package.json');
 sh.config.silent = false;
-sh.rm("package-lock.json");
 
 console.log("done!");
