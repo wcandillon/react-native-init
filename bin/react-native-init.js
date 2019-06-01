@@ -6,7 +6,7 @@ const path = require('path');
 const tsconfig = fs.readFileSync(path.resolve(__dirname, '../templates/tsconfig.json'), 'utf8');
 const eslintrc = fs.readFileSync(path.resolve(__dirname, '../templates/.eslintrc'), 'utf8');
 const gitignore = fs.readFileSync(path.resolve(__dirname, '../templates/.gitignore'), 'utf8');
-sh.exec('yarn add @types/expo eslint eslint-config-react-native-wcandillon --dev');
+sh.exec('yarn add @types/react @types/react-native eslint eslint-config-react-native-wcandillon --dev');
 sh.mv('App.js', 'App.tsx');
 sh.config.silent = true;
 sh.echo(tsconfig).to('tsconfig.json');
