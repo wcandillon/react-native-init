@@ -7,7 +7,7 @@ const eslintrc = fs.readFileSync(path.resolve(__dirname, '../templates/.eslintrc
 sh.echo(eslintrc).to('.eslintrc');
 sh.exec('yarn add eslint eslint-config-react-native-wcandillon --dev');
 const package = JSON.parse(sh.cat('package.json'));
-package.scripts.lint = "eslint App.tsx components/*";
+package.scripts.lint = "eslint --ext .js,.ts,.tsx .";
 package.scripts.tsc = "tsc";
 sh.echo(JSON.stringify(package, null, 2)).to('package.json');
 
