@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/wcandillon/react-native-init#readme",
   "devDependencies": {
-    "semantic-release": "^15.13.3",
+    "semantic-release": "^17.2.3",
     "semantic-release-cli": "^4.1.0"
   },
   "dependencies": {
